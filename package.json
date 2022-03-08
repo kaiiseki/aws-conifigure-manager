@@ -5,7 +5,8 @@
   "main": "bin/index.js",
   "scripts": {
     "start": "node -r ts-node/register bin/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "bin": {
     "aws-configure-manager": "bin/index.js"
