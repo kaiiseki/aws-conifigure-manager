@@ -1,12 +1,13 @@
 {
   "name": "aws-configure-manager",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "aws cli",
   "main": "bin/index.js",
   "scripts": {
     "start": "node -r ts-node/register bin/index.ts",
     "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "publish": "npm publish",
+    "prepublish": "npm run build"
   },
   "bin": {
     "aws-configure-manager": "bin/index.js"
