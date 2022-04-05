@@ -4,16 +4,7 @@ import { prompt } from 'enquirer'
 import fs from 'fs'
 
 const run = async () => {
-  const question1: { path: string } = await prompt([
-    {
-      type: 'input',
-      name: 'path',
-      message: `ホームディレクトリパスを入力してください。（例: /Users/k.iseki）`,
-      required: true,
-    },
-  ])
-
-  const awsDirectoryPath = `${question1.path}/.aws`
+  const awsDirectoryPath = `${process.env.HOME}/.aws`
   const existAWSDirectory = fs.existsSync(awsDirectoryPath)
   if (!existAWSDirectory) throw new Error('.awsディレクトリが存在しません')
 
